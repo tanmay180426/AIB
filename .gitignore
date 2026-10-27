@@ -1,0 +1,93 @@
+# Node
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+frontend/.cache/
+frontend/*.tsbuildinfo
+frontend/vite.config.js
+frontend/vite.config.d.ts
+
+
+
+# Playwright
+frontend/playwright-report/
+frontend/test-results/
+frontend/blob-report/
+frontend/playwright/.cache/
+
+# Python
+backend/.venv/
+backend/__pycache__/
+backend/app/**/__pycache__/
+ml/.venv/
+ml/__pycache__/
+ml/src/**/__pycache__/
+*.pyc
+
+# Env
+.env
+.env.local
+
+# Local dev database (SQLite)
+backend/*.db
+backend/*.sqlite
+*.db
+
+# Data/model artifacts
+ml/data/processed/
+data/source/
+ml/reports/
+ml/models/*.pkl
+ml/models/*.joblib
+ml/models/*.h5
+ml/models/*.onnx
+
+# Logs
+*.log
+logs/
+
+# Build
+*.egg-info/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Private uploads, source archives and local implementation/test scratch files
+olist dataset.zip
+backend/uploads/
+.universal_work/
+
+# Private runtime files and undistributed trained artifacts, at any depth
+.env.*
+!.env.example
+**/.env
+*.db-wal
+*.db-shm
+*.db-journal
+*.sqlite
+*.sqlite3
+*.sqlite-wal
+*.sqlite-shm
+*.joblib
+*.pickle
+*.pkl
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.gguf
+**/.pytest_cache/
+**/__pycache__/
+
+# Local-only data, experiment outputs and temporary test artifacts
+data/derived/
+ml/experiments/
+ml/notebooks/recovered/
+backend/.pytest-tmp/
+test_results.txt
+**/pytest-of-*/

@@ -1,0 +1,63 @@
+{
+  "name": "sales_prediction",
+  "version": "0.1.0",
+  "target": "item_revenue",
+  "algorithm": "best of [LinearRegression, RandomForest] -> linear_regression",
+  "trained_at": "2026-10-06T16:38:38.807540+00:00",
+  "dataset_fingerprint": "f0083069ec91f65d",
+  "features_schema": [
+    "purchase_month",
+    "purchase_weekday",
+    "purchase_hour",
+    "n_items",
+    "customer_state",
+    "product_category_name"
+  ],
+  "metrics": {
+    "selected": "linear_regression",
+    "candidates": {
+      "linear_regression": {
+        "mae": 96.048,
+        "rmse": 215.9341,
+        "mape": 139.455
+      },
+      "random_forest": {
+        "mae": 97.122,
+        "rmse": 217.5531,
+        "mape": 142.3547
+      }
+    },
+    "n_train": 78932,
+    "n_test": 19734
+  },
+  "status": "available",
+  "artifact": "sales_prediction.joblib",
+  "notes": "Random split seed=42. No leakage features. Historical data only.",
+  "contract": {
+    "required_semantics": [
+      "date",
+      "order",
+      "quantity",
+      "location",
+      "category",
+      "revenue"
+    ],
+    "optional_semantics": [],
+    "training_domain": "Brazilian e-commerce",
+    "currency_code": "BRL",
+    "expected_types": {
+      "date": "datetime",
+      "order": "entity",
+      "quantity": "numeric",
+      "location": "entity",
+      "category": "entity",
+      "revenue": "numeric"
+    },
+    "minimum_observations": 1,
+    "frequency": null,
+    "transformations": "checkout month,weekday,hour,quantity,customer state,category",
+    "supported_filters": "shared dataset filters before feature aggregation",
+    "output_type": "order revenue",
+    "automatically_retrained": false
+  }
+}

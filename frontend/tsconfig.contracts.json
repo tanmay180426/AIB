@@ -1,0 +1,5 @@
+{
+  "extends": "./tsconfig.json",
+  "include": ["tests/ml-contracts.test.ts", "src/vite-env.d.ts"],
+  "references": []
+}

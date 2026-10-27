@@ -1,0 +1,157 @@
+{
+  "name": "anomaly_detection",
+  "version": "0.1.0",
+  "target": "is_anomaly",
+  "algorithm": "IsolationForest",
+  "trained_at": "2026-10-06T16:39:19.344530+00:00",
+  "dataset_fingerprint": "1edfb5be08d6ea57",
+  "features_schema": [
+    "orders",
+    "revenue"
+  ],
+  "metrics": {
+    "contamination": 0.03,
+    "n_days": 634,
+    "n_anomalies": 19,
+    "top_anomalies": [
+      {
+        "date": "2017-11-24",
+        "orders": 1176,
+        "revenue": 152653.74,
+        "score": -0.24527664303184826
+      },
+      {
+        "date": "2017-11-25",
+        "orders": 499,
+        "revenue": 60923.48,
+        "score": -0.18255935755070496
+      },
+      {
+        "date": "2018-08-06",
+        "orders": 372,
+        "revenue": 56427.39,
+        "score": -0.11990727691161518
+      },
+      {
+        "date": "2018-05-16",
+        "orders": 357,
+        "revenue": 56283.73,
+        "score": -0.11136084789792455
+      },
+      {
+        "date": "2018-05-07",
+        "orders": 372,
+        "revenue": 54167.48,
+        "score": -0.09950867610366398
+      },
+      {
+        "date": "2018-05-14",
+        "orders": 364,
+        "revenue": 53842.38,
+        "score": -0.09696661549273644
+      },
+      {
+        "date": "2017-11-27",
+        "orders": 403,
+        "revenue": 47923.66,
+        "score": -0.08788119367351022
+      },
+      {
+        "date": "2017-11-26",
+        "orders": 391,
+        "revenue": 45315.28,
+        "score": -0.0742285914876134
+      },
+      {
+        "date": "2018-08-07",
+        "orders": 370,
+        "revenue": 49178.98,
+        "score": -0.06801370215393754
+      },
+      {
+        "date": "2017-11-28",
+        "orders": 380,
+        "revenue": 47886.55,
+        "score": -0.06146238192123832
+      },
+      {
+        "date": "2018-05-10",
+        "orders": 279,
+        "revenue": 51458.67,
+        "score": -0.03558503746269481
+      },
+      {
+        "date": "2018-04-09",
+        "orders": 253,
+        "revenue": 49308.73,
+        "score": -0.03202254759023193
+      },
+      {
+        "date": "2018-05-15",
+        "orders": 352,
+        "revenue": 41119.85,
+        "score": -0.02106599197580128
+      },
+      {
+        "date": "2017-12-04",
+        "orders": 337,
+        "revenue": 47348.52,
+        "score": -0.020861675432578553
+      },
+      {
+        "date": "2018-05-08",
+        "orders": 331,
+        "revenue": 47800.69,
+        "score": -0.01865370655225662
+      },
+      {
+        "date": "2018-06-11",
+        "orders": 294,
+        "revenue": 49669.7,
+        "score": -0.013011377020394121
+      },
+      {
+        "date": "2016-10-03",
+        "orders": 8,
+        "revenue": 463.48,
+        "score": -0.008438889010187745
+      },
+      {
+        "date": "2018-05-09",
+        "orders": 344,
+        "revenue": 43589.12,
+        "score": -0.00534737398226115
+      },
+      {
+        "date": "2017-01-05",
+        "orders": 32,
+        "revenue": 396.9,
+        "score": -0.0027505055063382633
+      }
+    ]
+  },
+  "status": "available",
+  "artifact": "anomaly_detection.joblib",
+  "notes": "Unsupervised; contamination fixed at 3%. Scores are decision_function values.",
+  "contract": {
+    "required_semantics": [
+      "date",
+      "order",
+      "revenue"
+    ],
+    "optional_semantics": [],
+    "training_domain": "Brazilian e-commerce",
+    "currency_code": "BRL",
+    "expected_types": {
+      "date": "datetime",
+      "order": "entity",
+      "revenue": "numeric"
+    },
+    "minimum_observations": 30,
+    "frequency": "daily",
+    "transformations": "daily order count and revenue",
+    "supported_filters": "shared dataset filters before feature aggregation",
+    "output_type": "daily anomalies",
+    "automatically_retrained": false
+  }
+}

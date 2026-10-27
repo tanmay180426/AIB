@@ -1,0 +1,52 @@
+{
+  "name": "sales_forecast_revenue",
+  "version": "0.1.0",
+  "target": "sales_forecast_revenue",
+  "algorithm": "LinearRegression (lag/rolling features)",
+  "trained_at": "2026-10-06T16:38:26.190500+00:00",
+  "dataset_fingerprint": "1edfb5be08d6ea57",
+  "features_schema": [
+    "lag1",
+    "lag7",
+    "lag14",
+    "lag30",
+    "roll7",
+    "roll30"
+  ],
+  "metrics": {
+    "model": {
+      "mae": 5390.8137,
+      "rmse": 6860.6506,
+      "mape": 77.3045
+    },
+    "seasonal_naive_baseline": {
+      "mae": 7793.5347,
+      "rmse": 10652.2927,
+      "mape": 125.1388
+    },
+    "n_train": 483,
+    "n_test": 121
+  },
+  "status": "available",
+  "artifact": "sales_forecast_revenue.joblib",
+  "notes": "Chronological split; seasonal naive baseline included. Historical data only.",
+  "contract": {
+    "required_semantics": [
+      "date",
+      "revenue"
+    ],
+    "optional_semantics": [],
+    "training_domain": "Brazilian e-commerce",
+    "currency_code": "BRL",
+    "expected_types": {
+      "date": "datetime",
+      "revenue": "numeric"
+    },
+    "minimum_observations": 30,
+    "frequency": "daily",
+    "transformations": "lag1,lag7,lag14,lag30,roll7,roll30",
+    "supported_filters": "shared dataset filters before feature aggregation",
+    "output_type": "daily revenue",
+    "automatically_retrained": false
+  }
+}

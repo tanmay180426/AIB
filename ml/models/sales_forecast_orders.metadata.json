@@ -1,0 +1,52 @@
+{
+  "name": "sales_forecast_orders",
+  "version": "0.1.0",
+  "target": "sales_forecast_orders",
+  "algorithm": "LinearRegression (lag/rolling features)",
+  "trained_at": "2026-10-06T16:38:26.165997+00:00",
+  "dataset_fingerprint": "1edfb5be08d6ea57",
+  "features_schema": [
+    "lag1",
+    "lag7",
+    "lag14",
+    "lag30",
+    "roll7",
+    "roll30"
+  ],
+  "metrics": {
+    "model": {
+      "mae": 35.2808,
+      "rmse": 44.0684,
+      "mape": 302.9289
+    },
+    "seasonal_naive_baseline": {
+      "mae": 56.0744,
+      "rmse": 74.7963,
+      "mape": 294.3114
+    },
+    "n_train": 483,
+    "n_test": 121
+  },
+  "status": "available",
+  "artifact": "sales_forecast_orders.joblib",
+  "notes": "Chronological split; seasonal naive baseline included. Historical data only.",
+  "contract": {
+    "required_semantics": [
+      "date",
+      "order"
+    ],
+    "optional_semantics": [],
+    "training_domain": "Brazilian e-commerce",
+    "currency_code": null,
+    "expected_types": {
+      "date": "datetime",
+      "order": "entity"
+    },
+    "minimum_observations": 30,
+    "frequency": "daily",
+    "transformations": "lag1,lag7,lag14,lag30,roll7,roll30",
+    "supported_filters": "shared dataset filters before feature aggregation",
+    "output_type": "daily orders",
+    "automatically_retrained": false
+  }
+}

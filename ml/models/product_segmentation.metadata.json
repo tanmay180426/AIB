@@ -1,0 +1,81 @@
+{
+  "name": "product_segmentation",
+  "version": "0.1.0",
+  "target": "cluster_label",
+  "algorithm": "KMeans (product engagement, standardized)",
+  "trained_at": "2026-10-06T16:39:18.550152+00:00",
+  "dataset_fingerprint": "1fcb5f3e0c7e497e",
+  "features_schema": [
+    "qty_log",
+    "revenue_log",
+    "avg_price",
+    "product_weight_g"
+  ],
+  "metrics": {
+    "k": 4,
+    "silhouette": 0.4798,
+    "silhouette_by_k": {
+      "2": 0.4625,
+      "3": 0.4676,
+      "4": 0.4798,
+      "5": 0.3574,
+      "6": 0.3714
+    },
+    "cluster_sizes": {
+      "0": 2187,
+      "1": 6746,
+      "2": 23279,
+      "3": 739
+    },
+    "cluster_means": {
+      "0": {
+        "total_qty": 1.92,
+        "total_revenue": 569.99,
+        "avg_price": 310.5
+      },
+      "1": {
+        "total_qty": 10.95,
+        "total_revenue": 1144.99,
+        "avg_price": 130.71
+      },
+      "2": {
+        "total_qty": 1.42,
+        "total_revenue": 120.65,
+        "avg_price": 96.04
+      },
+      "3": {
+        "total_qty": 1.91,
+        "total_revenue": 2452.6,
+        "avg_price": 1341.56
+      }
+    }
+  },
+  "status": "available",
+  "artifact": "product_segmentation.joblib",
+  "notes": "log1p transforms on qty/revenue; k selected by sampled silhouette.",
+  "contract": {
+    "required_semantics": [
+      "product",
+      "quantity",
+      "revenue",
+      "price",
+      "weight_g"
+    ],
+    "optional_semantics": [],
+    "training_domain": "Brazilian e-commerce",
+    "currency_code": "BRL",
+    "expected_types": {
+      "product": "entity",
+      "quantity": "numeric",
+      "revenue": "numeric",
+      "price": "numeric",
+      "weight_g": "numeric"
+    },
+    "minimum_observations": 1,
+    "frequency": null,
+    "transformations": "log1p(quantity),log1p(revenue),price,weight in grams; saved scaler",
+    "supported_filters": "shared dataset filters before feature aggregation",
+    "output_type": "product clusters",
+    "automatically_retrained": false
+  }
+}

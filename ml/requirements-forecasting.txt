@@ -1,0 +1,3 @@
+# Optional candidate implementation: existing ML requirements already pin
+# statsmodels. Install this extra to evaluate the LightGBM candidate.
+lightgbm==4.6.0

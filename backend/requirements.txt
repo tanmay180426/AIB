@@ -1,0 +1,29 @@
+fastapi==0.115.5
+uvicorn[standard]==0.32.0
+pydantic==2.10.2
+pydantic-settings==2.6.1
+sqlalchemy==2.0.36
+psycopg2-binary==2.9.10
+python-multipart==0.0.17
+python-dotenv==1.0.1
+# Existing optional local Ollama transport (previously declared only in dev).
+httpx==0.27.0
+
+# ML serving (loads artifacts produced by ml/ training scripts)
+joblib==1.4.2
+numpy==2.1.3
+pandas==2.2.3
+scikit-learn==1.5.2
+# Runtime dependency of the isolated integrated seasonal demo artifacts.
+lightgbm==4.6.0
+openpyxl==3.1.5
+xlrd==2.0.1
+
+# Authentication and API testing are used by the existing app.
+python-jose[cryptography]==3.3.0
+passlib[bcrypt]==1.7.4
+bcrypt==4.0.1
+
+# Local business DOCX reports and aggregate chart rendering.
+python-docx==1.2.0
+matplotlib==3.9.2
